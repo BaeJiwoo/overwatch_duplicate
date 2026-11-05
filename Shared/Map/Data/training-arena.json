@@ -1,0 +1,5079 @@
+{
+  "schemaVersion": 1,
+  "id": "training-arena",
+  "displayName": "Training Arena",
+  "arenaSize": {
+    "x": 80,
+    "y": 24,
+    "z": 80
+  },
+  "materials": [
+    {
+      "id": "floor",
+      "color": {
+        "x": 0.12,
+        "y": 0.17,
+        "z": 0.23
+      },
+      "metallic": 0.2,
+      "smoothness": 0.35,
+      "emission": 0
+    },
+    {
+      "id": "wall",
+      "color": {
+        "x": 0.27,
+        "y": 0.34,
+        "z": 0.43
+      },
+      "metallic": 0.35,
+      "smoothness": 0.45,
+      "emission": 0
+    },
+    {
+      "id": "metal",
+      "color": {
+        "x": 0.37,
+        "y": 0.46,
+        "z": 0.55
+      },
+      "metallic": 0.65,
+      "smoothness": 0.5,
+      "emission": 0
+    },
+    {
+      "id": "dark",
+      "color": {
+        "x": 0.055,
+        "y": 0.08,
+        "z": 0.12
+      },
+      "metallic": 0.5,
+      "smoothness": 0.4,
+      "emission": 0
+    },
+    {
+      "id": "white",
+      "color": {
+        "x": 0.72,
+        "y": 0.8,
+        "z": 0.85
+      },
+      "metallic": 0.25,
+      "smoothness": 0.5,
+      "emission": 0
+    },
+    {
+      "id": "cyan",
+      "color": {
+        "x": 0.04,
+        "y": 0.7,
+        "z": 0.95
+      },
+      "metallic": 0.4,
+      "smoothness": 0.5,
+      "emission": 0.65
+    },
+    {
+      "id": "orange",
+      "color": {
+        "x": 1.0,
+        "y": 0.3,
+        "z": 0.07
+      },
+      "metallic": 0.35,
+      "smoothness": 0.45,
+      "emission": 0.5
+    },
+    {
+      "id": "energy",
+      "color": {
+        "x": 0.2,
+        "y": 0.95,
+        "z": 0.9
+      },
+      "metallic": 0.2,
+      "smoothness": 0.6,
+      "emission": 1.5
+    },
+    {
+      "id": "marking",
+      "color": {
+        "x": 0.34,
+        "y": 0.45,
+        "z": 0.54
+      },
+      "metallic": 0.1,
+      "smoothness": 0.3,
+      "emission": 0
+    }
+  ],
+  "objects": [
+    {
+      "id": "arena-floor",
+      "group": "foundation",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": -0.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 80,
+        "y": 1,
+        "z": 80
+      },
+      "material": "floor"
+    },
+    {
+      "id": "boundary-west",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -39.5,
+        "y": 4,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 8,
+        "z": 80
+      },
+      "material": "dark"
+    },
+    {
+      "id": "boundary-west-band",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.96,
+        "y": 5.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.06,
+        "y": 0.15,
+        "z": 78
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "boundary-south",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 4,
+        "z": -39.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 8,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "boundary-pier-0-0",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": -33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": -33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-1",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-2",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": -11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": -11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-3",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-4",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": 11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-4",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": 11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-5",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-5",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-0-6",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -38.7,
+        "y": 5,
+        "z": 33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-0-6",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -38.05,
+        "y": 4.5,
+        "z": 33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "gallery-0",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 3.75,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 10,
+        "y": 0.5,
+        "z": 32
+      },
+      "material": "metal"
+    },
+    {
+      "id": "gallery-pillar-0-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -30,
+        "y": 1.75,
+        "z": -13
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-pillar-0-13",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -30,
+        "y": 1.75,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-pillar-0-26",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -30,
+        "y": 1.75,
+        "z": 13
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-outer-rail-0",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -31.8,
+        "y": 4.6,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.35,
+        "y": 1.2,
+        "z": 32
+      },
+      "material": "dark"
+    },
+    {
+      "id": "gallery-outer-glow-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -31.55,
+        "y": 4.85,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.06,
+        "y": 0.12,
+        "z": 31
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "gallery-cover-0-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -24,
+        "y": 4.65,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.6,
+        "y": 1.3,
+        "z": 2.2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-cover-cap-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -24,
+        "y": 5.31,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.65,
+        "y": 0.05,
+        "z": 2.25
+      },
+      "material": "white"
+    },
+    {
+      "id": "gallery-cover-0-16",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -24,
+        "y": 4.65,
+        "z": 8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.6,
+        "y": 1.3,
+        "z": 2.2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-cover-cap-0-16",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -24,
+        "y": 5.31,
+        "z": 8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.65,
+        "y": 0.05,
+        "z": 2.25
+      },
+      "material": "white"
+    },
+    {
+      "id": "utility-0-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -34,
+        "y": 2,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 4,
+        "z": 6
+      },
+      "material": "wall"
+    },
+    {
+      "id": "utility-roof-0-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -34,
+        "y": 4.2,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.5,
+        "y": 0.4,
+        "z": 6.5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "utility-panel-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -31.97,
+        "y": 2.5,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.04,
+        "y": 1.4,
+        "z": 3
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "utility-0-40",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -34,
+        "y": 2,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 4,
+        "z": 6
+      },
+      "material": "wall"
+    },
+    {
+      "id": "utility-roof-0-40",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -34,
+        "y": 4.2,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.5,
+        "y": 0.4,
+        "z": 6.5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "utility-panel-0-40",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -31.97,
+        "y": 2.5,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.04,
+        "y": 1.4,
+        "z": 3
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "spawn-back-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 2.5,
+        "z": -37
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 20,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-side-0-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -10,
+        "y": 2.5,
+        "z": -32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 11
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-side-0-20",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 10,
+        "y": 2.5,
+        "z": -32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 11
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-front-0-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -7,
+        "y": 2.5,
+        "z": -26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-front-0-14",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 7,
+        "y": 2.5,
+        "z": -26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-roof-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 5.1,
+        "z": -32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 21,
+        "y": 0.4,
+        "z": 12
+      },
+      "material": "metal"
+    },
+    {
+      "id": "spawn-portal-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 4.3,
+        "z": -26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 8,
+        "y": 1.4,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "spawn-header-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 4.25,
+        "z": -25.96
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 7,
+        "y": 0.25,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "spawn-portal-light-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -4,
+        "y": 1.8,
+        "z": -25.95
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.12,
+        "y": 3.5,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "spawn-portal-light-0-8",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 4,
+        "y": 1.8,
+        "z": -25.95
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.12,
+        "y": 3.5,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "spawn-zone-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.012,
+        "z": -32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 17,
+        "y": 0.024,
+        "z": 8
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "bridge-0",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 3.75,
+        "z": -14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 44,
+        "y": 0.5,
+        "z": 5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "bridge-support-0-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -18,
+        "y": 1.75,
+        "z": -14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-0-8",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -10,
+        "y": 1.75,
+        "z": -14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-0-28",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 10,
+        "y": 1.75,
+        "z": -14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-0-36",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 18,
+        "y": 1.75,
+        "z": -14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-railing-0-0",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -14,
+        "y": 4.55,
+        "z": -16.3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 14,
+        "y": 1.1,
+        "z": 0.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "bridge-light-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -14,
+        "y": 4.9,
+        "z": -16.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 13,
+        "y": 0.12,
+        "z": 0.05
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "bridge-railing-0-28",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 14,
+        "y": 4.55,
+        "z": -16.3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 14,
+        "y": 1.1,
+        "z": 0.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "bridge-light-0-28",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 14,
+        "y": 4.9,
+        "z": -16.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 13,
+        "y": 0.12,
+        "z": 0.05
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "combat-cover-0-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -9,
+        "y": 0.8,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 1.6,
+        "z": 2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-cover-top-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -9,
+        "y": 1.62,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.05,
+        "y": 0.04,
+        "z": 2.05
+      },
+      "material": "white"
+    },
+    {
+      "id": "combat-cover-0-18",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 9,
+        "y": 0.8,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 1.6,
+        "z": 2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-cover-top-0-18",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 9,
+        "y": 1.62,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.05,
+        "y": 0.04,
+        "z": 2.05
+      },
+      "material": "white"
+    },
+    {
+      "id": "combat-baffle-0-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -17,
+        "y": 1.5,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.5,
+        "y": 3,
+        "z": 5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-baffle-strip-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -17,
+        "y": 2.65,
+        "z": -2.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.3,
+        "y": 0.13,
+        "z": 0.05
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "combat-baffle-0-34",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 17,
+        "y": 1.5,
+        "z": -5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.5,
+        "y": 3,
+        "z": 5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-baffle-strip-0-34",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 17,
+        "y": 2.65,
+        "z": -2.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.3,
+        "y": 0.13,
+        "z": 0.05
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "lane-stripe-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -20,
+        "y": 0.015,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.18,
+        "y": 0.03,
+        "z": 12
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "lane-stripe-0-40",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 20,
+        "y": 0.015,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.18,
+        "y": 0.03,
+        "z": 12
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "center-chevron-0-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -18.0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "center-chevron-0-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -19.6
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "center-chevron-0-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -21.2
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "center-chevron-0-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": -22.8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "boundary-east",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 39.5,
+        "y": 4,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 8,
+        "z": 80
+      },
+      "material": "dark"
+    },
+    {
+      "id": "boundary-east-band",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.96,
+        "y": 5.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.06,
+        "y": 0.15,
+        "z": 78
+      },
+      "material": "orange"
+    },
+    {
+      "id": "boundary-north",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 4,
+        "z": 39.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 8,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "boundary-pier-2-0",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": -33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": -33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-1",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-2",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": -11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": -11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-3",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-4",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": 11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-4",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": 11
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-5",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-5",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "boundary-pier-2-6",
+      "group": "boundary",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 38.7,
+        "y": 5,
+        "z": 33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.2,
+        "y": 10,
+        "z": 1.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "boundary-pier-light-2-6",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 38.05,
+        "y": 4.5,
+        "z": 33
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 5,
+        "z": 0.14
+      },
+      "material": "energy"
+    },
+    {
+      "id": "gallery-2",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 3.75,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 10,
+        "y": 0.5,
+        "z": 32
+      },
+      "material": "metal"
+    },
+    {
+      "id": "gallery-pillar-2-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 30,
+        "y": 1.75,
+        "z": -13
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-pillar-2-13",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 30,
+        "y": 1.75,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-pillar-2-26",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 30,
+        "y": 1.75,
+        "z": 13
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 3.5,
+        "z": 1.5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-outer-rail-2",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 31.8,
+        "y": 4.6,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.35,
+        "y": 1.2,
+        "z": 32
+      },
+      "material": "dark"
+    },
+    {
+      "id": "gallery-outer-glow-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 31.55,
+        "y": 4.85,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.06,
+        "y": 0.12,
+        "z": 31
+      },
+      "material": "orange"
+    },
+    {
+      "id": "gallery-cover-2-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 24,
+        "y": 4.65,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.6,
+        "y": 1.3,
+        "z": 2.2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-cover-cap-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 24,
+        "y": 5.31,
+        "z": -8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.65,
+        "y": 0.05,
+        "z": 2.25
+      },
+      "material": "white"
+    },
+    {
+      "id": "gallery-cover-2-16",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 24,
+        "y": 4.65,
+        "z": 8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.6,
+        "y": 1.3,
+        "z": 2.2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "gallery-cover-cap-2-16",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 24,
+        "y": 5.31,
+        "z": 8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.65,
+        "y": 0.05,
+        "z": 2.25
+      },
+      "material": "white"
+    },
+    {
+      "id": "utility-2-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 34,
+        "y": 2,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 4,
+        "z": 6
+      },
+      "material": "wall"
+    },
+    {
+      "id": "utility-roof-2-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 34,
+        "y": 4.2,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.5,
+        "y": 0.4,
+        "z": 6.5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "utility-panel-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 31.97,
+        "y": 2.5,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.04,
+        "y": 1.4,
+        "z": 3
+      },
+      "material": "orange"
+    },
+    {
+      "id": "utility-2-40",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 34,
+        "y": 2,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 4,
+        "z": 6
+      },
+      "material": "wall"
+    },
+    {
+      "id": "utility-roof-2-40",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 34,
+        "y": 4.2,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.5,
+        "y": 0.4,
+        "z": 6.5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "utility-panel-2-40",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 31.97,
+        "y": 2.5,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.04,
+        "y": 1.4,
+        "z": 3
+      },
+      "material": "orange"
+    },
+    {
+      "id": "spawn-back-2",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 2.5,
+        "z": 37
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 20,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-side-2-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -10,
+        "y": 2.5,
+        "z": 32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 11
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-side-2-20",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 10,
+        "y": 2.5,
+        "z": 32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 11
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-front-2-0",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -7,
+        "y": 2.5,
+        "z": 26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-front-2-14",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 7,
+        "y": 2.5,
+        "z": 26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 5,
+        "z": 1
+      },
+      "material": "wall"
+    },
+    {
+      "id": "spawn-roof-2",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 5.1,
+        "z": 32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 21,
+        "y": 0.4,
+        "z": 12
+      },
+      "material": "metal"
+    },
+    {
+      "id": "spawn-portal-2",
+      "group": "spawn-buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 4.3,
+        "z": 26.5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 8,
+        "y": 1.4,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "spawn-header-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 4.25,
+        "z": 25.96
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 7,
+        "y": 0.25,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "spawn-portal-light-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -4,
+        "y": 1.8,
+        "z": 25.95
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.12,
+        "y": 3.5,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "spawn-portal-light-2-8",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 4,
+        "y": 1.8,
+        "z": 25.95
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.12,
+        "y": 3.5,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "spawn-zone-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.012,
+        "z": 32
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 17,
+        "y": 0.024,
+        "z": 8
+      },
+      "material": "orange"
+    },
+    {
+      "id": "bridge-2",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 3.75,
+        "z": 14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 44,
+        "y": 0.5,
+        "z": 5
+      },
+      "material": "metal"
+    },
+    {
+      "id": "bridge-support-2-0",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -18,
+        "y": 1.75,
+        "z": 14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-2-8",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -10,
+        "y": 1.75,
+        "z": 14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-2-28",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 10,
+        "y": 1.75,
+        "z": 14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-support-2-36",
+      "group": "buildings",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 18,
+        "y": 1.75,
+        "z": 14
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1,
+        "y": 3.5,
+        "z": 1
+      },
+      "material": "dark"
+    },
+    {
+      "id": "bridge-railing-2-0",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -14,
+        "y": 4.55,
+        "z": 16.3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 14,
+        "y": 1.1,
+        "z": 0.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "bridge-light-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -14,
+        "y": 4.9,
+        "z": 16.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 13,
+        "y": 0.12,
+        "z": 0.05
+      },
+      "material": "orange"
+    },
+    {
+      "id": "bridge-railing-2-28",
+      "group": "highground",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 14,
+        "y": 4.55,
+        "z": 16.3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 14,
+        "y": 1.1,
+        "z": 0.3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "bridge-light-2-28",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 14,
+        "y": 4.9,
+        "z": 16.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 13,
+        "y": 0.12,
+        "z": 0.05
+      },
+      "material": "orange"
+    },
+    {
+      "id": "combat-cover-2-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -9,
+        "y": 0.8,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 1.6,
+        "z": 2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-cover-top-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -9,
+        "y": 1.62,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.05,
+        "y": 0.04,
+        "z": 2.05
+      },
+      "material": "white"
+    },
+    {
+      "id": "combat-cover-2-18",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 9,
+        "y": 0.8,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 1.6,
+        "z": 2
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-cover-top-2-18",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 9,
+        "y": 1.62,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4.05,
+        "y": 0.04,
+        "z": 2.05
+      },
+      "material": "white"
+    },
+    {
+      "id": "combat-baffle-2-0",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -17,
+        "y": 1.5,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.5,
+        "y": 3,
+        "z": 5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-baffle-strip-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -17,
+        "y": 2.65,
+        "z": 2.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.3,
+        "y": 0.13,
+        "z": 0.05
+      },
+      "material": "orange"
+    },
+    {
+      "id": "combat-baffle-2-34",
+      "group": "cover",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 17,
+        "y": 1.5,
+        "z": 5
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.5,
+        "y": 3,
+        "z": 5
+      },
+      "material": "wall"
+    },
+    {
+      "id": "combat-baffle-strip-2-34",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 17,
+        "y": 2.65,
+        "z": 2.47
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 2.3,
+        "y": 0.13,
+        "z": 0.05
+      },
+      "material": "orange"
+    },
+    {
+      "id": "lane-stripe-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -20,
+        "y": 0.015,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.18,
+        "y": 0.03,
+        "z": 12
+      },
+      "material": "orange"
+    },
+    {
+      "id": "lane-stripe-2-40",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 20,
+        "y": 0.015,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.18,
+        "y": 0.03,
+        "z": 12
+      },
+      "material": "orange"
+    },
+    {
+      "id": "center-chevron-2-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": 18.0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "orange"
+    },
+    {
+      "id": "center-chevron-2-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": 19.6
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "orange"
+    },
+    {
+      "id": "center-chevron-2-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": 21.2
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "orange"
+    },
+    {
+      "id": "center-chevron-2-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.02,
+        "z": 22.8
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 0.04,
+        "z": 0.25
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-south-ramp",
+      "group": "access",
+      "shape": "Ramp",
+      "colliderType": "Ramp",
+      "position": {
+        "x": -27,
+        "y": 2,
+        "z": -22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 4,
+        "z": 12
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-north-ramp",
+      "group": "access",
+      "shape": "Ramp",
+      "colliderType": "Ramp",
+      "position": {
+        "x": 27,
+        "y": 2,
+        "z": 22
+      },
+      "rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 4,
+        "z": 12
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-south-step-00",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.125,
+        "z": -27.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-00",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.125,
+        "z": 27.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-00",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 0.258,
+        "z": -27.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-00",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 0.258,
+        "z": 27.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-01",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.25,
+        "z": -26.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-01",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.25,
+        "z": 26.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-01",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 0.508,
+        "z": -27.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-01",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 0.508,
+        "z": 27.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-02",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.375,
+        "z": -26.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-02",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.375,
+        "z": 26.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 0.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-02",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 0.758,
+        "z": -26.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-02",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 0.758,
+        "z": 26.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-03",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.5,
+        "z": -25.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-03",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.5,
+        "z": 25.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-03",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 1.008,
+        "z": -25.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-03",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 1.008,
+        "z": 25.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-04",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.625,
+        "z": -24.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-04",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.625,
+        "z": 24.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-04",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 1.258,
+        "z": -24.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-04",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 1.258,
+        "z": 24.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-05",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.75,
+        "z": -23.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-05",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.75,
+        "z": 23.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-05",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 1.508,
+        "z": -24.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-05",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 1.508,
+        "z": 24.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-06",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 0.875,
+        "z": -23.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-06",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 0.875,
+        "z": 23.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 1.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-06",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 1.758,
+        "z": -23.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-06",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 1.758,
+        "z": 23.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-07",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.0,
+        "z": -22.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-07",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.0,
+        "z": 22.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-07",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 2.008,
+        "z": -22.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-07",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 2.008,
+        "z": 22.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-08",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.125,
+        "z": -21.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-08",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.125,
+        "z": 21.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-08",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 2.258,
+        "z": -21.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-08",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 2.258,
+        "z": 21.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-09",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.25,
+        "z": -20.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-09",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.25,
+        "z": 20.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-09",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 2.508,
+        "z": -21.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-09",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 2.508,
+        "z": 21.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-10",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.375,
+        "z": -20.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-10",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.375,
+        "z": 20.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 2.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-10",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 2.758,
+        "z": -20.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-10",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 2.758,
+        "z": 20.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-11",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.5,
+        "z": -19.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-11",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.5,
+        "z": 19.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-11",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 3.008,
+        "z": -19.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-11",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 3.008,
+        "z": 19.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-12",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.625,
+        "z": -18.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-12",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.625,
+        "z": 18.625
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.25,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-12",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 3.258,
+        "z": -18.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-12",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 3.258,
+        "z": 18.94
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-13",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.75,
+        "z": -17.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-13",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.75,
+        "z": 17.875
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.5,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-13",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 3.508,
+        "z": -18.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-13",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 3.508,
+        "z": 18.19
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-14",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 1.875,
+        "z": -17.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-14",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 1.875,
+        "z": 17.125
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 3.75,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-14",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 3.758,
+        "z": -17.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-14",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 3.758,
+        "z": 17.44
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "east-south-step-15",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 27,
+        "y": 2.0,
+        "z": -16.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 4.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "west-north-step-15",
+      "group": "access",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": -27,
+        "y": 2.0,
+        "z": 16.375
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 6,
+        "y": 4.0,
+        "z": 0.75
+      },
+      "material": "metal"
+    },
+    {
+      "id": "east-step-line-15",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 27,
+        "y": 4.008,
+        "z": -16.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "orange"
+    },
+    {
+      "id": "west-step-line-15",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -27,
+        "y": 4.008,
+        "z": 16.69
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 5.8,
+        "y": 0.016,
+        "z": 0.06
+      },
+      "material": "cyan"
+    },
+    {
+      "id": "reactor-plinth",
+      "group": "center",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 0.35,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 7,
+        "y": 0.7,
+        "z": 7
+      },
+      "material": "dark"
+    },
+    {
+      "id": "reactor-body",
+      "group": "center",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 2.4,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 3,
+        "y": 3.4,
+        "z": 3
+      },
+      "material": "wall"
+    },
+    {
+      "id": "reactor-crown",
+      "group": "center",
+      "shape": "Box",
+      "colliderType": "Aabb",
+      "position": {
+        "x": 0,
+        "y": 4.3,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 4,
+        "y": 0.4,
+        "z": 4
+      },
+      "material": "metal"
+    },
+    {
+      "id": "reactor-core-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -1.55,
+        "y": 2.35,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 2.8,
+        "z": 1.5
+      },
+      "material": "energy"
+    },
+    {
+      "id": "reactor-core-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 1.55,
+        "y": 2.35,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.08,
+        "y": 2.8,
+        "z": 1.5
+      },
+      "material": "energy"
+    },
+    {
+      "id": "reactor-face-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 2.35,
+        "z": -1.55
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 2.8,
+        "z": 0.08
+      },
+      "material": "energy"
+    },
+    {
+      "id": "reactor-face-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 2.35,
+        "z": 1.55
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 1.5,
+        "y": 2.8,
+        "z": 0.08
+      },
+      "material": "energy"
+    },
+    {
+      "id": "floor-line-x-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -30,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-0",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": -30
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -20,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-1",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": -20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": -10,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-2",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": -10
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-3",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-4",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 10,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-4",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": 10
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-5",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 20,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-5",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": 20
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-x-6",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 30,
+        "y": 0.006,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 0.035,
+        "y": 0.012,
+        "z": 78
+      },
+      "material": "marking"
+    },
+    {
+      "id": "floor-line-z-6",
+      "group": "details",
+      "shape": "Box",
+      "colliderType": "None",
+      "position": {
+        "x": 0,
+        "y": 0.006,
+        "z": 30
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "x": 78,
+        "y": 0.012,
+        "z": 0.035
+      },
+      "material": "marking"
+    }
+  ],
+  "spawns": [
+    {
+      "id": "team-0-spawn-0",
+      "team": 0,
+      "position": {
+        "x": -6,
+        "y": 0.05,
+        "z": -32
+      },
+      "yaw": 0
+    },
+    {
+      "id": "team-0-spawn-1",
+      "team": 0,
+      "position": {
+        "x": -2,
+        "y": 0.05,
+        "z": -32
+      },
+      "yaw": 0
+    },
+    {
+      "id": "team-0-spawn-2",
+      "team": 0,
+      "position": {
+        "x": 2,
+        "y": 0.05,
+        "z": -32
+      },
+      "yaw": 0
+    },
+    {
+      "id": "team-0-spawn-3",
+      "team": 0,
+      "position": {
+        "x": 6,
+        "y": 0.05,
+        "z": -32
+      },
+      "yaw": 0
+    },
+    {
+      "id": "team-1-spawn-0",
+      "team": 1,
+      "position": {
+        "x": -6,
+        "y": 0.05,
+        "z": 32
+      },
+      "yaw": 180
+    },
+    {
+      "id": "team-1-spawn-1",
+      "team": 1,
+      "position": {
+        "x": -2,
+        "y": 0.05,
+        "z": 32
+      },
+      "yaw": 180
+    },
+    {
+      "id": "team-1-spawn-2",
+      "team": 1,
+      "position": {
+        "x": 2,
+        "y": 0.05,
+        "z": 32
+      },
+      "yaw": 180
+    },
+    {
+      "id": "team-1-spawn-3",
+      "team": 1,
+      "position": {
+        "x": 6,
+        "y": 0.05,
+        "z": 32
+      },
+      "yaw": 180
+    }
+  ]
+}

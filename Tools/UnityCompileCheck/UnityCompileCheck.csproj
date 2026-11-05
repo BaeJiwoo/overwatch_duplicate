@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <UnityManagedDir Condition="'$(UnityManagedDir)' == ''">C:/Program Files/Unity/Hub/Editor/6000.3.11f1/Editor/Data/Managed</UnityManagedDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Client/Assets/Scripts/**/*.cs" />
+    <Compile Include="../../Client/Assets/Editor/**/*.cs" />
+    <ProjectReference Include="../../Shared/FPSPrototype.Shared.csproj" />
+    <Reference Include="UnityEngine"><HintPath>$(UnityManagedDir)/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEditor"><HintPath>$(UnityManagedDir)/UnityEditor.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="$(UnityManagedDir)/UnityEngine/*.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckUnityReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(UnityManagedDir)/UnityEditor.dll')" Text="Supply -p:UnityManagedDir=path/to/Unity/Editor/Data/Managed. This only checks C# compilation, not Editor/Play Mode execution." />
+  </Target>
+</Project>

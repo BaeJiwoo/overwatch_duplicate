@@ -1,0 +1,14 @@
+{
+    "passed": true,
+    "editorGeneration": true,
+    "deterministicRegeneration": true,
+    "colliderParity": true,
+    "playMode": true,
+    "unityVersion": "6000.3.11f1",
+    "mapSha256": "cf19ef292e38f64395f0a4ff7511c00fce792607fc1394c9dbc75e69b7fd45ff",
+    "geometrySha256": "e3e5dd4fb819e0e09f7e73a2a2a1296d991558636c04b9c83fc21c3b527e6661",
+    "error": "",
+    "objects": 222,
+    "spawns": 8,
+    "rayChecks": 1030
+}
