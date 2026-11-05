@@ -12,6 +12,7 @@ Client/MemoryCaptures/
 Client/Recordings/
 Client/Assets/Generated/
 Client/Assets/Generated.meta
+Client/ProjectSettings/EditorBuildSettings.asset
 Client/*.csproj
 Client/*.sln
 Client/*.slnx

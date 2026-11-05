@@ -32,6 +32,10 @@ pwsh -File Tools/Validate-Unity.ps1
 
 정본 JSON은 `Shared/Map/Data/training-arena.json`입니다. Editor와 서버가 같은 데이터와 단순 기하 코드를 읽습니다. 생성 Scene/자산은 `Client/Assets/Generated/TrainingArena`에 만들어지며 재생성이 가능합니다.
 
+Unity 6000.3.11f1에서 실제 맵 생성·재생성·1,030개 충돌 대조 검사와 Play Mode 검증을 통과했습니다. 아래는 실제 Play Mode 카메라 렌더입니다.
+
+![Training Arena 전체 조망](Docs/Evidence/training-arena-overview.png)
+
 ## 다음 단계
 
 [Phase 1 Issue #2](https://github.com/BaeJiwoo/overwatch_duplicate/issues/2)의 PR 검토 이후 [Phase 2 Issue #3](https://github.com/BaeJiwoo/overwatch_duplicate/issues/3)에서 LiteNetLib UDP와 30 TPS 독립 서버를 구현합니다. 모든 단계는 Issue → branch → 구현 → 테스트 → PR → 사용자 검토 순서이며 자동으로 병합하지 않습니다.

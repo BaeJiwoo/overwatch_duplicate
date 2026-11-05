@@ -24,6 +24,8 @@ pwsh -File Tools/Validate-Unity.ps1 -UnityPath 'C:\Program Files\Unity\Hub\Edito
 
 스크립트는 Editor를 별도로 실행하여 C# import/컴파일, 두 번 생성, GUID/기하 fingerprint 비교, 각 Collider의 9개 표면 샘플을 Shared raycast와 대조, Ramp 옆면/빈 공간 대조, Play Mode 진입, 스폰 overlap/지면 ray 검사, 세 시점의 PNG 캡처를 수행한다. 결과는 `Artifacts/phase1-validation.json`과 `Artifacts/unity-validation.log`에 저장한다. 유효한 passed 보고서가 없으면 성공으로 반환하지 않는다. 최대 6분을 기다린다.
 
+Play Mode 요청은 Editor의 시작 시 지연 콜백 이후에 수행한다. 새 프로젝트에서 검색 인덱스가 생성되기 전에 진입해 발생하는 Unity 6.3 초기화 오류를 방지한다. 실패 보고서는 이번 실행에서 통과한 단계만 보존하며 이전 실행의 성공 상태를 재사용하지 않는다.
+
 프로젝트가 이미 다른 Editor에서 열려 있으면 그 Editor를 종료하거나 메뉴의 `FPS Prototype > Validate Phase 1 (includes Play Mode)`를 사용한다. 수동 검증 전에 작업 중인 씬을 저장한다.
 
 관찰 방법:

@@ -29,6 +29,7 @@ namespace FPSPrototype.Editor
             if(EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode before validation.");
             if(!Application.isBatchMode&&!UnityEditor.SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             Directory.CreateDirectory(Artifacts);
+            File.WriteAllText(Path.Combine(Artifacts,"phase1-validation.json"),JsonUtility.ToJson(new Report{unityVersion=Application.unityVersion},true));
             SessionState.SetString(Error,"");
             try {
                 var map=TrainingArenaBuilder.Generate();
@@ -43,8 +44,20 @@ namespace FPSPrototype.Editor
                 File.WriteAllText(Path.Combine(Artifacts,"phase1-validation.json"),JsonUtility.ToJson(report,true));
                 SessionState.SetBool(Active,true);SessionState.SetBool("FPSPrototype.Validation.PlayChecked",false);
                 SessionState.SetFloat("FPSPrototype.Validation.Start",(float)EditorApplication.timeSinceStartup);
-                EditorApplication.EnterPlaymode();
+                // Let startup delay callbacks create the Editor's search database before
+                // isPlayingOrWillChangePlaymode becomes true (important on a fresh project).
+                EditorApplication.delayCall+=EnterPlayModeWhenReady;
             } catch(Exception e) {Fail(e.ToString());}
+        }
+
+        private static void EnterPlayModeWhenReady()
+        {
+            if(!SessionState.GetBool(Active,false))return;
+            if(EditorApplication.isCompiling||EditorApplication.isUpdating) {
+                EditorApplication.delayCall+=EnterPlayModeWhenReady;
+                return;
+            }
+            EditorApplication.EnterPlaymode();
         }
 
         private static void Tick()
@@ -148,7 +161,10 @@ namespace FPSPrototype.Editor
         private static void Require(bool ok,string message) {if(!ok)throw new InvalidOperationException(message);}
         private static void Fail(string error) {
             SessionState.SetBool(Active,false);Directory.CreateDirectory(Artifacts);
-            File.WriteAllText(Path.Combine(Artifacts,"phase1-validation.json"),JsonUtility.ToJson(new Report{passed=false,unityVersion=Application.unityVersion,error=error},true));
+            var path=Path.Combine(Artifacts,"phase1-validation.json");
+            var report=File.Exists(path)?JsonUtility.FromJson<Report>(File.ReadAllText(path)):new Report();
+            report.passed=false;report.unityVersion=Application.unityVersion;report.error=error;
+            File.WriteAllText(path,JsonUtility.ToJson(report,true));
             Debug.LogError("PHASE1_VALIDATION_FAILED: "+error);if(Application.isBatchMode)EditorApplication.Exit(1);
         }
     }

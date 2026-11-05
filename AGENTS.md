@@ -24,7 +24,7 @@
 5. Inspect `Artifacts/phase1-validation.json`, `Artifacts/unity-validation.log`, generated overview/ground screenshots, and `git diff --check`.
 6. If Unity cannot run, record the exact error and leave Unity checks unverified; never substitute .NET tests for Unity execution.
 
-The .NET test program is a dependency-free executable and returns nonzero on failure. `dotnet test` alone does not run it. Generated assets in `Client/Assets/Generated` are reproducible and ignored; source `.meta` files and `ProjectSettings` are tracked. Run the generator to restore generated assets after cloning. Never manually edit generated assets.
+The .NET test program is a dependency-free executable and returns nonzero on failure. `dotnet test` alone does not run it. Generated assets in `Client/Assets/Generated` are reproducible and ignored; source `.meta` files, package lock, and `ProjectSettings` are tracked. `EditorBuildSettings.asset` is generated with the scene and ignored because its scene GUID is local to each checkout. Run the generator to restore generated assets and the build scene list after cloning. Never manually edit generated assets.
 
 ## PR
 Reference the issue, final behavior, commands/results, screenshots where useful, limitations, and remaining phases. Keep authentication material, Library/Temp/Logs, local caches, binaries, and machine paths out of commits. Do not claim CI ran when only local checks ran.
