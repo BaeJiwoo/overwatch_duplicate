@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 24
+  productGUID: 64abdf56f2a040fa84a0e419b7205152
+  companyName: FPS Prototype
+  productName: Training Arena
+  defaultScreenWidth: 1280
+  defaultScreenHeight: 800
+  defaultIsNativeResolution: 0
+  runInBackground: 1
+  resizableWindow: 1
+  fullscreenMode: 3
+  m_ActiveColorSpace: 0
+  scriptingBackend:
+    Standalone: 0
+  apiCompatibilityLevelPerPlatform:
+    Standalone: 6
+  apiCompatibilityLevel: 6
+  activeInputHandler: 0

@@ -1,0 +1,7 @@
+{
+  "name": "com.fpsprototype.shared",
+  "version": "0.1.0",
+  "displayName": "FPS Prototype Shared",
+  "description": "Pure C# map and gameplay contracts shared with the standalone .NET server.",
+  "unity": "6000.3"
+}

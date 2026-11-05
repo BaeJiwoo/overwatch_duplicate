@@ -1,0 +1,7 @@
+{
+  "name": "FPSPrototype.Editor",
+  "rootNamespace": "FPSPrototype.Editor",
+  "references": ["FPSPrototype.Shared", "FPSPrototype.Client"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

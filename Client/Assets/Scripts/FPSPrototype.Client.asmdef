@@ -1,0 +1,6 @@
+{
+  "name": "FPSPrototype.Client",
+  "rootNamespace": "FPSPrototype.Client",
+  "references": ["FPSPrototype.Shared"],
+  "autoReferenced": true
+}

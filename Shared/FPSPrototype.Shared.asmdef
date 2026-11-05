@@ -1,0 +1,7 @@
+{
+  "name": "FPSPrototype.Shared",
+  "rootNamespace": "FPSPrototype.Shared",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}
