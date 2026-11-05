@@ -20,6 +20,9 @@
 | 서버 `--validate-map` | 통과, 종료 코드 0 | Unity 없이 동일 JSON 로드/검증/해시 |
 | `dotnet build Tools/UnityCompileCheck/UnityCompileCheck.csproj -c Release -m:1` | 통과, 경고/오류 0 | 설치된 Unity DLL을 참조한 C# API 컴파일 검사 |
 | Unity Editor 실제 실행 시도 | **실패, 종료 코드 198** | 라이선스 단계에서 종료, 프로젝트 import 전 |
+| GitHub Actions / Ubuntu 24.04 | **통과** | solution build, 29개 테스트, 서버 맵 검증 |
+
+원격 CI 근거: [Shared and server checks #2](https://github.com/BaeJiwoo/overwatch_duplicate/actions/runs/41951214895), 구현 커밋 `f5cfdf982e4f3f79060b12f912123ab0f005a0ba`. 원격 CI도 Unity Editor/Play Mode는 실행하지 않았다.
 
 우회로 몸체 여유 공간 테스트가 최초에 실패하여 외곽 건물을 1m 안쪽으로 이동했고, 같은 테스트가 통과하는 것을 확인했다.
 
